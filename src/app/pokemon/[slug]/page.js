@@ -2,10 +2,8 @@
 import { use, useEffect, useState } from 'react';
 
 const PokemonDetail = ({params}) => {
-//   const router = useRouter();
   const {slug} = use(params);
   const id = Number(slug);
-  console.log(id);
   const [pokemonData, setPokemonData] = useState({
     abilities: [],
     types: [],
@@ -54,7 +52,6 @@ const PokemonDetail = ({params}) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-10" >
       <main className="max-w-[1920px] mx-auto p-6 sm:p-8" style={{backgroundColor:"rgb(245, 245, 245)"}}>
-        {/* Pokemon Image and Name Section */}
         <header className="bg-white rounded-3xl p-8 shadow-lg mb-12 transform transition-all duration-300 hover:shadow-xl">
           <section className="flex flex-col items-center gap-8">
             <div className="relative-group" >
@@ -70,14 +67,11 @@ const PokemonDetail = ({params}) => {
               <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 ">
                 {pokemonData.abilities.name}
               </h1>
-              {/* <div className="text-2xl text-gray-500 font-medium">#{id}</div> */}
             </div>
           </section>
         </header>
 
-        {/* Info Cards Section */}
         <section className="flex flex-wrap gap-20 justify-center  section" >
-          {/* Abilities Card */}
           <article className="bg-white p-4 border border-gray-200 rounded-2xl m-4 h-fit shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-200 min-w-[350px] article">
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Abilities
@@ -85,7 +79,6 @@ const PokemonDetail = ({params}) => {
             <p className="text-gray-700 text-lg">{pokemonData.abilities.name}</p>
           </article>
 
-          {/* Type Card */}
           <article className="bg-white p-4 border border-gray-200 rounded-2xl m-4 h-fit shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-200 min-w-[350px] article">
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Type
@@ -93,7 +86,6 @@ const PokemonDetail = ({params}) => {
             <p className="text-gray-700 text-lg">{pokemonData.types.name}</p>
           </article>
 
-          {/* Moves Card */}
           <article className="bg-white p-4 border border-gray-200 rounded-2xl m-4 h-fit shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-200 min-w-[350px] article">
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Moves
@@ -107,7 +99,6 @@ const PokemonDetail = ({params}) => {
             </div>
           </article>
 
-          {/* Stats Card */}
           <article className="bg-white p-4 border border-gray-200 rounded-2xl m-4 h-fit shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-200 min-w-[350px] article">
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Stats

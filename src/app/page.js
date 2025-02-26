@@ -33,7 +33,6 @@ const HomePage = () => {
     setSearchQuery(e.target.value);
   };
 
-  // Filter pokemon based on search query
   const filteredPokemon = pokemonData.results.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
